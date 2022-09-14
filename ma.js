@@ -167,7 +167,7 @@ function searchdata(value){
 	
 if(searchmood == 'title'){
 	for(let i=0;i<datapro.length;i++){
-		if(datapro[i].title.includes(value)){
+		if(datapro[i].title.toLowerCase().includes(value)){
 			table += `
   <tr>
    <td>${i}</td>
@@ -187,7 +187,7 @@ if(searchmood == 'title'){
 }
 else{
 for(let i=0;i<datapro.length;i++){
-		if(datapro[i].category.includes(value)){
+		if(datapro[i].category.toLowerCase().includes(value)){
 			table += `
   <tr>
    <td>${i}</td>
