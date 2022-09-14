@@ -1,0 +1,140 @@
+<html>
+<head>
+<title>مشروع كبير</title>
+<style>
+body{
+font-family:inherit;
+font-weight:bold;
+}
+/*الصفحة تكون فى النص وفى فراغ من الناحيتين و
+ تكون ديف الرئيسية فى النص فعشان كده عملنا auto*/
+.cruds{
+width:80%;
+margin:auto;
+text-transform:capitalize;
+}
+.head{
+text-align:center;
+text-transform:uppercase;
+margin:10px 0px;
+font-size:18pt;
+}
+input{
+width:100%;
+height:40px;
+outline:none;
+margin:4px 0px;
+background-color:#fbfbe6;
+border-radius:4px;
+padding:4px;
+font-size:20pt;
+text-transform:capitalize;
+color:black;
+}
+input:focus{
+background-color:#ffebee;
+transform:scale(1.025);
+}
+.price input{
+width:20%;
+}
+#total{
+background-color:#ef9a9a;
+padding:5px 2px;
+border-radius:4px;
+font-size:20pt;
+}
+#total::before{
+content:'Total:';
+}
+button{
+width:100%;
+border-radius:6px;
+height:40px;
+background-color:#81d4fa;
+font-size:20pt;
+cursor:pointer;
+transition:0.5s;
+}
+button:hover{
+background-color:#64b5f6;
+letter-spacing:1px;
+}
+.btnsearch{
+display:flex;
+justify-content:space-between;
+}
+.btnsearch button{
+width:45%;
+}
+table{
+width:100%;
+text-align:center;
+margin:10px 0px;
+font-size:20pt;
+}
+table button{
+border-radius:15px;
+}
+th,td{
+padding:5px;
+}
+#deleteall{
+margin:20px 0px;
+}
+</style>
+</head>
+<body>
+<!-- مشروع cruds اضافه الى قاعدة البيانات وحذف وقراة البيانات وتعديلها والبحث  
+حنعمل ديف للموقع ككل ونقسم الموقع ل عنوان ومدخولات ونتائج يعنى نعمل 3 ديف -->
+<div class="cruds">
+<div class="head">
+<h2>cruds</h2>
+<p>product management system</p>
+</div>
+<div class="inputs">
+<input type="text" id="title" placeholder="title" />
+<div class="price">
+<input onkeyup="getTotal()" type="number" id="price" placeholder="price" />
+<input onkeyup="getTotal()" type="number" id="taxes" placeholder="taxes" />
+<input onkeyup="getTotal()" type="number" id="ads" placeholder="ads" />
+<input onkeyup="getTotal()" type="number" id="discount" placeholder="discount" />
+<small id="total">0</small>
+</div>
+<input type="number" id="count" placeholder="count" />
+<input type="text" id="category" placeholder="category" />
+<button id="submit">create</button>
+</div>
+<div class="outputs">
+<div class="searchblock">
+<input onkeyup="searchdata(this.value)" type="text" id="search" placeholder="search" />
+<div class="btnsearch">
+<button onclick="getsearchmood(this.id);" id="searchtitle">search by title</button>
+<button onclick="getsearchmood(this.id);" id="searchcategory">search by category</button>
+</div>
+</div>
+<div id="deleteall">
+
+</div>
+<table>
+<tr>
+<th>id</th>
+<th>title</th>
+<th>price</th>
+<th>taxes</th>
+<th>ads</th>
+<th>discount</th>
+<th>totel</th>
+<th>category</th>
+<th>update</th>
+<th>delete</th>
+</tr>
+<tbody id="tbody">
+
+</tbody>
+</table>
+</div>
+</div>
+<script src="ma.js"></script>
+</body>
+</html>
