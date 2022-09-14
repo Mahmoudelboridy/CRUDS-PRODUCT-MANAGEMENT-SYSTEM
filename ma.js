@@ -32,14 +32,14 @@ datapro=[];
 }
 submit.onclick=function(){
 let newpro = {
-title:title.value.toLowerCase(),
+title:title.value,
 price:price.value,
 taxes:taxes.value,
 ads:ads.value,
 discount:discount.value,
 total:total.innerHTML,
 count:count.value,
-category:category.value.toLowerCase()
+category:category.value
 }
 if(title.value != '' && price.value !=''&& category.value !=''&& count.value<100){
 if(mood === 'create'){
@@ -155,7 +155,7 @@ if(id=='searchtitle'){
 } 
 else{
 	searchmood='category';
-		search.placeholder='search by category'
+		search.placeholder='search by category';
 
 }
 search.focus();
@@ -165,9 +165,9 @@ showdata();
 function searchdata(value){
 	let table=' ';
 	
-if(searchmood='title'){
+if(searchmood == 'title'){
 	for(let i=0;i<datapro.length;i++){
-		if(datapro[i].title.includes(value.toLowerCase())){
+		if(datapro[i].title.includes(value)){
 			table += `
   <tr>
    <td>${i}</td>
@@ -187,7 +187,7 @@ if(searchmood='title'){
 }
 else{
 for(let i=0;i<datapro.length;i++){
-		if(datapro[i].category.includes(value.toLowerCase())){
+		if(datapro[i].category.includes(value)){
 			table += `
   <tr>
    <td>${i}</td>
