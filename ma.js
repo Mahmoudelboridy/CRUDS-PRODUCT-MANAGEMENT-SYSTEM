@@ -23,7 +23,7 @@ total.style.backgroundColor='#ef9a9a';
 }
 }
 //function create product
-let datapro;
+let datapro=[];
 if(localStorage.product != null){
 datapro=JSON.parse(localStorage.product);
 }
